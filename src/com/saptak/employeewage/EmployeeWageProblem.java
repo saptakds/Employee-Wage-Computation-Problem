@@ -4,8 +4,11 @@ import java.util.Random;
 
 public class EmployeeWageProblem {
 
+	private static final int FULL_DAY_WORKING_HOURS = 8;
+	private static final int WAGE_PER_HOUR = 20;
+	private static final int DAILY_WAGE = FULL_DAY_WORKING_HOURS * WAGE_PER_HOUR;
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("-->Welcome to Employee Wage Computation<--");
 		if (isEmployeePresent()) {
 			System.out.println("Employee is PRESENT");
@@ -14,7 +17,7 @@ public class EmployeeWageProblem {
 		}
 	}
 
-	public static boolean isEmployeePresent() {
+	private static boolean isEmployeePresent() {
 		return new Random().nextBoolean();
 	}
 }
