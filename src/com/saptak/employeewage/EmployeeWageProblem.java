@@ -11,6 +11,16 @@ public class EmployeeWageProblem {
 
 	public static void main(String[] args) {
 		System.out.println("-->Welcome to Employee Wage Computation<--");
+		switch (getEmployeeType()) {
+		case "Full-time":
+			System.out.println("Employment: Full-time");
+			break;
+		case "Part-time":
+			System.out.println("Employment: Part-time");
+			break;
+		default:
+			break;
+		}
 		if (isEmployeePresent()) {
 			System.out.println("Employee is PRESENT");
 		} else {
@@ -20,5 +30,10 @@ public class EmployeeWageProblem {
 
 	private static boolean isEmployeePresent() {
 		return new Random().nextBoolean();
+	}
+
+	private static String getEmployeeType() {
+		String[] arr = { "Full-time", "Part-time" };
+		return arr[new Random().nextInt(arr.length)];
 	}
 }
