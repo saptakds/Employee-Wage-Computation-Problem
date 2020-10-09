@@ -9,6 +9,7 @@ public class EmployeeWageProblem {
 	private static final int DAILY_WAGE = FULL_DAY_WORKING_HOURS * WAGE_PER_HOUR;
 	private static final int PART_TIME_WORKING_HOURS = 8;
 	private static final int WORKING_DAYS_PER_MONTH = 20;
+	private static final int WORKING_HOURS_FOR_A_MONTH = 100;
 
 	public static void main(String[] args) {
 		System.out.println("-->Welcome to Employee Wage Computation<--");
@@ -28,10 +29,13 @@ public class EmployeeWageProblem {
 
 	private static long getWagesForMonth() {
 		long wages = 0;
-		for (int i = 1; i <= WORKING_DAYS_PER_MONTH; i++) {
-			System.out.println("Day #" + i);
+		int workingHours = 0, workingDays = 0;
+		while (workingDays < WORKING_DAYS_PER_MONTH && workingHours < WORKING_HOURS_FOR_A_MONTH) {
+			workingDays++;
+			System.out.println("Day #" + workingDays);
 			if (isEmployeePresent()) {
 				System.out.println("Present");
+				workingHours += FULL_DAY_WORKING_HOURS;
 				wages += DAILY_WAGE;
 			} else {
 				System.out.println("Absent");
