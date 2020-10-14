@@ -39,6 +39,8 @@ public class EmployeeWageProblem {
 	}
 
 	public static void main(String[] args) {
+		
+		//Use case for git
 
 		EmployeeWageProblem jioMart = new EmployeeWageProblem("JIO Mart", 160, 20, 100);
 		EmployeeWageProblem bigBasket = new EmployeeWageProblem("Big Basket", 280, 22, 110);
