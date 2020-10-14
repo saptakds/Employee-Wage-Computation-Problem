@@ -1,23 +1,27 @@
 package com.saptak.employeewage;
 
+import java.util.ArrayList;
+
 public class EmpWageBuilder implements CalcEmpWage {
 
-	private CompanyEmpWage[] empWages;
+	private ArrayList<CompanyEmpWage> empWages;
 
 	public EmpWageBuilder() {
-		empWages = new CompanyEmpWage[2];
+		empWages = new ArrayList<CompanyEmpWage>();
 	}
 
 	public static void main(String[] args) {
 
 		EmpWageBuilder emps = new EmpWageBuilder();
-		emps.empWages[0] = new CompanyEmpWage("Big Basket", 280, 22, 110);
-		emps.calcWagesForMonth(emps.empWages[0]);
-		emps.empWages[1] = new CompanyEmpWage("JIO Mart", 200, 20, 100);
-		emps.calcWagesForMonth(emps.empWages[1]);
+		emps.empWages.add(new CompanyEmpWage("Big Basket", 280, 22, 110));
+		emps.empWages.add(new CompanyEmpWage("JIO Mart", 200, 20, 100));
 
-		for (int i = 0; i < 2; i++) {
-			System.out.println(emps.empWages[i]);
+		for (CompanyEmpWage cew : emps.empWages) {
+			emps.calcWagesForMonth(cew);
+		}
+
+		for (CompanyEmpWage cew : emps.empWages) {
+			System.out.println(cew);
 		}
 	}
 
