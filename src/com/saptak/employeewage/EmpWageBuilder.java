@@ -29,6 +29,18 @@ public class EmpWageBuilder implements CalcEmpWage {
 				System.out.println(k + ": " + cew.dailyWagesRecord.get(k));
 			}
 		}
+
+		String query = "JIO Mart";
+		System.out.println(getTotalWageByCompany(query, emps.empWages));
+	}
+
+	private static String getTotalWageByCompany(String query, ArrayList<CompanyEmpWage> empWages2) {
+		for (CompanyEmpWage c : empWages2) {
+			if (c.companyName.equals(query)) {
+				return "Total Wage: " + c.monthlyWage;
+			}
+		}
+		return "Company not found!";
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import java.util.Random;
 public class CompanyEmpWage {
 
 	static final int FULL_DAY_WORKING_HOURS = 8;
-	private final String companyName;
+	final String companyName;
 	final int dailyWage;
 	final int workingDaysPerMonth;
 	final int workingHoursPerMonth;
